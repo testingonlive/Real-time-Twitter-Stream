@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 
-var React = require( 'React' );
+var React = require( 'react' );
 
 module.exports = NotificationBar = React.createClass({
     render: function(){

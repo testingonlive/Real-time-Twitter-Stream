@@ -2,9 +2,11 @@ var Tweet = require( '../models/Tweet' );
 
 module.exports = function( stream, io ){
     
+       
     // When tweets get sent out way ...
     stream.on( 'data', function( data ){
         
+              
         // Construct a new tweet object
         var tweet = {
             twid: data[ 'id' ],
@@ -27,4 +29,6 @@ module.exports = function( stream, io ){
             }
         });
     });
+    
+    stream.on( 'error', function( err ){ console.log( err )})
 };

@@ -25,6 +25,7 @@ mongoose.connect( 'mongodb://127.0.0.1/react-tweets' );
 // Create a new ntwitter instance
 var twit = new twitter( config.twitter );
 
+
 // Index Route
 app.get( '/', routes.index );
 
@@ -43,9 +44,9 @@ var server = http.createServer( app ).listen( port, function(){
 var io = require( 'socket.io' ).listen( server );
 
 // Set a stream listener for the tweets matching tracking keywords
-twit.stream( 'statuses/filter', { track: 'scotch_io, #scotchio' }, function( stream ){
+twit.stream( 'statuses/filter', { track: 'javascript' }, function( stream ){
     streamHandler( stream, io );   
-})
+});
 
 
 
